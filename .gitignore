@@ -35,3 +35,6 @@
 # Logs
 *.log
 
+# Other LTspice files
+*.raw
+*.net
