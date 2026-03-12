@@ -11,6 +11,9 @@ for col in ["gain_max_dB", "gbw"]:
     df[col] = (df[col] - mu) / sigma
     print(f"{col}: mean={mu:.4f}, std={sigma:.4f}")
 
+for col in ["w1", "w3", "w5"]:
+    df[col] = df[col] * 1000
+
 df = df.sample(frac=1, random_state=42).reset_index(drop=True)
 
 df.to_csv(OUTPUT_FILE, index=False)
